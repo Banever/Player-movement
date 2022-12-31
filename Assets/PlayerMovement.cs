@@ -56,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
         {
             DashSkill();
         }
+        if(Candash == false)
+        {
+            Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, 0);
+        }
 
         IsGrounded = Physics2D.OverlapCircle(Feet.position, Groundcheck, WhatIsGround);
         if(IsGrounded == true && Input.GetKeyDown(KeyCode.Space))
